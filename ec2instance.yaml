@@ -7,11 +7,11 @@
    zone_id: "Z100089128WOYUCB7KSS2"
    domain_name: "awsdevops2025.fun"
    # instance we can give in -e
-  #  instance:
-  #  - mongodb
-  #  - rabbitmq
-  #  - redis
-  #  - mysql
+   instance:
+   - mongodb
+   - rabbitmq
+   - redis
+   - mysql
   tasks:
   - name: create ec2 instance
     amazon.aws.ec2_instance:
@@ -29,8 +29,7 @@
       msg: "{{ ec2_output }}"
   - name: print private ip address
     ansible.builtin.debug: 
-      #msg: "{{ item.instances[0].private_ip_address }}"
-      msg: "{{ ec2_output.instances[0].private_ip_address }}"
+      msg: "{{ item.instances[0].private_ip_address }}"
     loop: "{{ ec2_output.results }}"
   - name: print public ip address
     ansible.builtin.debug: 
