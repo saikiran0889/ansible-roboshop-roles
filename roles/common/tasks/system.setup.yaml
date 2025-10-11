@@ -2,8 +2,8 @@
    ansible.builtin.template:
     src: "{{ component }}.service.j2"
     dest: "/etc/systemd/system/{{ component }}.service"
-
    notify: demonreload
+   
  - name: start the service
    ansible.builtin.service:
     name: "{{ component }}"
