@@ -1,7 +1,0 @@
-- name: inlude vs import role
-  ansible.buildin.debug:
-    msg: "hi"
-
-- name: inlude vs import role 2
-ansible.buildin.debug:
-    msg: "hello"
